@@ -1,7 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-export default class HomeScreen extends React.Component {
+const NotificationsScreen = () => (
+  <View>
+    <Text>NotificationsScreen</Text>
+  </View>
+);
+
+class HomeScreen extends React.Component {
   render() {
     return (
       <View>
@@ -11,6 +18,12 @@ export default class HomeScreen extends React.Component {
   }
 }
 
+const HomeScreenTabNavigator = TabNavigator({
+  HomeScreen: { screen: HomeScreen },
+  NotificationsScreen: { screen: NotificationsScreen },
+}, {
+  animationEnabled: true,
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -20,3 +33,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default HomeScreenTabNavigator;
