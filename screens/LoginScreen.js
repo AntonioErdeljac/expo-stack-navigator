@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import HomeScreen from '../screens/HomeScreen';
 
-export default class LoginScreen extends React.Component {
+class LoginScreen extends React.Component {
   render() {
     return (
       <View>
@@ -12,6 +14,10 @@ export default class LoginScreen extends React.Component {
   }
 }
 
+const LoginScreenStackNavigator = StackNavigator({
+  LoginScreen: { screen: LoginScreen },
+  HomeScreen: { screen: HomeScreen },
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -21,3 +27,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default LoginScreenStackNavigator;

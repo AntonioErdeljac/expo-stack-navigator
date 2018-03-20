@@ -1,23 +1,27 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { DrawerNavigator, StackNavigator } from 'react-navigation';
 
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 
-const AppNavigator = StackNavigator({
-  HoginScreen: { screen: LoginScreen },
-  HomeScreen: { screen: HomeScreen },
-});
+// const AppNavigator = StackNavigator({
+//   LoginScreen: { screen: LoginScreen },
+//   HomeScreen: { screen: HomeScreen },
+// });
 
 export default class App extends React.Component {
   render() {
     return (
-      <AppNavigator />
+      <AppDrawerNavigator />
     );
   }
 }
 
+const AppDrawerNavigator = DrawerNavigator({
+  LoginScreen: { screen: LoginScreen },
+  HomeScreen: { screen: HomeScreen },
+});
 
 const styles = StyleSheet.create({
   container: {
